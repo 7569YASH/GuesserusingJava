@@ -1,0 +1,74 @@
+ import java.util.*;
+ class Main 
+ {
+	public static void main(String[] args) 
+	{
+	  Umpire U = new Umpire();
+	  U.collectNumFromGuesser();
+	  U.collectNumFromplayers();
+	  U.Compare();
+	}
+ }
+class Guesser
+{
+    int gnum;
+    int guessNum()
+    {
+        System.out.println("Guesser kindly guess a num");
+        Scanner scan = new Scanner(System.in);
+        gnum = scan.nextInt();
+        return gnum;
+    }
+}
+class player
+{
+    int pnum;
+    int predictNum()
+    {
+System.out.println("Player kindly predict a num");
+Scanner scan = new Scanner (System.in);
+pnum = scan.nextInt();
+return pnum;
+     }
+}
+class Umpire
+{
+    int NumFromGuesser;
+    int NumFromPlayer1;
+    int NumFromPlayer2;
+    int NumFromPlayer3;
+    void collectNumFromGuesser()
+    {
+        Guesser g = new Guesser();
+        NumFromGuesser = g.guessNum();
+    }
+    void collectNumFromplayers()
+    {
+        player P1 = new player();
+        player P2 = new player();
+        player P3 = new player();
+        NumFromPlayer1 = P1.predictNum();
+        NumFromPlayer2 = P2.predictNum();
+        NumFromPlayer3 = P3.predictNum();
+    }
+    void Compare()
+    {
+        if (NumFromPlayer1 == NumFromGuesser)
+        {
+            System.out.println("Player1 has Won the Game");
+        }
+         if (NumFromPlayer2 == NumFromGuesser)
+        {
+            System.out.println("Player2 has won the Game");
+        }
+         if (NumFromPlayer3 == NumFromGuesser)
+        {
+            System.out.println("Player3 has won the Game");
+        }
+        else 
+        {
+            System.out.println("Game Lost & Try Again");
+        }
+    }
+}
+
